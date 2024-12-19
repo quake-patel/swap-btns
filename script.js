@@ -19,3 +19,15 @@ const pressYes = () => {
 };
 
 btnNo.addEventListener("click", pressYes);
+
+const text = document.querySelector(".text");
+
+let gradientAngle = 0;
+
+setInterval(() => {
+  gradientAngle += 1;
+  text.style.background = `linear-gradient(${gradientAngle}deg, #ff0080, #40e0d0,rgb(0, 255, 76), #ffff00)`;
+  text.style.backgroundSize = "300% 300%";
+  text.style.backgroundClip = "text";
+  text.style.webkitBackgroundClip = "text";
+}, 50);
