@@ -1,0 +1,232 @@
+/* @keyframes mymove {
+  0% {
+    top: 0px;
+    background: red;
+    width: 100px;
+  }
+  100% {
+    top: 200px;
+    background: yellow;
+    width: 300px;
+  }
+} */
+@font-face {
+  font-family: "Trap Black";
+  src: url("fonts/TrapBlack.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* d61103 */
+* {
+  font-family: "Trap Black", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #fff;
+  /* d0cab7 */
+  font-size: 20vw;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.background-image {
+  background: url(./background.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  position: relative;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: -2px -2px 0 #000000, 4px -2px 0 #000000, -2px 3px 0 #000000,
+    2px 3px 0 #000000, 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+button {
+  background-color: #ffc300;
+  border: 2px solid #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 30px;
+  border-radius: 8px;
+  box-shadow: inset 0px 4px 6px #00000033;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 2px #000;
+  width: 120px;
+}
+button:hover {
+  box-shadow: inset 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+button:active {
+  box-shadow: inset 0px 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+.button-wrapper {
+  padding-top: 40px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+}
+button {
+  position: absolute;
+}
+#button-no {
+  left: 20px;
+}
+#button-yes {
+  right: 20px;
+}
+#button-no.go-left {
+  animation: go-left 0.7s forwards;
+}
+@keyframes go-left {
+  0% {
+    top: 40px;
+  }
+  50% {
+    background-color: #d61103;
+    top: 125px;
+  }
+  100% {
+    top: 40px;
+    left: 160px;
+  }
+}
+
+#button-yes.go-right {
+  animation: go-right 0.7s forwards;
+}
+@keyframes go-right {
+  0% {
+    right: 20px;
+  }
+  50% {
+    background-color: #03d634;
+  }
+  100% {
+    right: 160px;
+  }
+}
+
+#button-no.go-left.go-left-focus-out {
+  animation: go-left-focus 0.7s forwards;
+}
+@keyframes go-left-focus {
+  0% {
+    top: 40px;
+    left: 160px;
+    width: 120px;
+  }
+  100% {
+    top: 40px;
+    left: 180px;
+    width: 84px;
+  }
+}
+#button-yes.go-right.go-right-focus {
+  animation: go-right-focus 0.7s forwards;
+}
+@keyframes go-right-focus {
+  0% {
+    right: 160px;
+    width: 120px;
+  }
+  50% {
+    background-color: #03d634;
+    right: 134px;
+    width: 140px;
+  }
+  60% {
+    background-color: #03d634;
+    right: 126px;
+    width: 150px;
+  }
+  100% {
+    background-color: #ffc300;
+    right: 134px;
+    width: 140px;
+  }
+}
+#button-yes.go-right.go-right-focus {
+  animation: blink 1.8s infinite;
+  animation-delay: 0.7s;
+  right: 134px;
+  width: 140px;
+}
+@keyframes blink {
+  0% {
+    right: 134px;
+    width: 140px;
+    background-color: #ffc300;
+  }
+  100% {
+    right: 134px;
+    width: 140px;
+    background-color: #03d634;
+  }
+}
+.go-left.go-left-focus-out.display-none {
+  display: none;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.go-right.go-right-focus.full-focus {
+  left: 20px;
+  width: 260px !important;
+  height: 50px !important;
+}
+
+#button-no.go-left.go-left-focus-out {
+  animation: blink-red 1.8s;
+  animation-delay: 0.7s;
+  top: 40px;
+  left: 180px;
+  width: 84px;
+  background-color: #d61103;
+}
+@keyframes blink-red {
+  0% {
+    top: 40px;
+    left: 180px;
+    width: 84px;
+    background-color: #ffc300;
+  }
+  100% {
+    top: 40px;
+    left: 180px;
+    width: 84px;
+    background-color: #d61103;
+  }
+}
+
+.yes-yes::after {
+  content: "🌸 Thank You 🌸🐢🐢🦆🦦";
+  top: 100px;
+  left: -100px;
+  background: #00000033;
+  font-size: 30px;
+  line-height: 1;
+  color: #03d634;
+  position: absolute;
+  background: rgba(196, 195, 195, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 20px;
+}
+.title:after {
+  position: absolute;
+  content: "🌸";
+  top: 80px;
+  right: 20px;
+}
